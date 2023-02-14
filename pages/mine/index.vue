@@ -26,25 +26,6 @@
     </view>
 
     <view class="content-section">
-      <view class="mine-actions grid col-4 text-center">
-        <view class="action-item" @click="handleJiaoLiuQun">
-          <view class="iconfont icon-friendfill text-pink icon"></view>
-          <text class="text">交流群</text>
-        </view>
-        <view class="action-item" @click="handleBuilding">
-          <view class="iconfont icon-service text-blue icon"></view>
-          <text class="text">在线客服</text>
-        </view>
-        <view class="action-item" @click="handleBuilding">
-          <view class="iconfont icon-community text-mauve icon"></view>
-          <text class="text">反馈社区</text>
-        </view>
-        <view class="action-item" @click="handleBuilding">
-          <view class="iconfont icon-dianzan text-green icon"></view>
-          <text class="text">点赞我们</text>
-        </view>
-      </view>
-
       <view class="menu-list">
         <view class="list-cell list-cell-arrow" @click="handleToEditInfo">
           <view class="menu-item-box">
@@ -52,12 +33,7 @@
             <view>编辑资料</view>
           </view>
         </view>
-        <view class="list-cell list-cell-arrow" @click="handleHelp">
-          <view class="menu-item-box">
-            <view class="iconfont icon-help menu-icon"></view>
-            <view>常见问题</view>
-          </view>
-        </view>
+    
         <view class="list-cell list-cell-arrow" @click="handleAbout">
           <view class="menu-item-box">
             <view class="iconfont icon-aixin menu-icon"></view>
@@ -113,7 +89,7 @@
       handleLogout() {
         this.$modal.confirm('确定注销并退出系统吗？').then(() => {
           this.$store.dispatch('LogOut').then(() => {
-            this.$tab.reLaunch('/pages/index')
+            this.$tab.reLaunch('/pages/project/index')
           })
         })
       },
